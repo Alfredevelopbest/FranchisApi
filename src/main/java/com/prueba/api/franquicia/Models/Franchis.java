@@ -1,5 +1,6 @@
 package com.prueba.api.franquicia.Models;
 
+
 public class Franchis {
     
     private int franchisId;

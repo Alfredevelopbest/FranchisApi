@@ -1,6 +1,7 @@
 package com.prueba.api.franquicia.Models;
 
 public class Branch {
+    
     private int idBranch;
     private String nameBranch;
     private int idProduct;
@@ -15,9 +16,9 @@ public class Branch {
         return idBranch;
     }
 
-    public String getNameBranch ()[
+    public String getNameBranch (){
         return nameBranch;
-    ]
+    }
 
     public void setNameBranch (String nameBranch){
         this.nameBranch = nameBranch;

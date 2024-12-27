@@ -1,19 +1,23 @@
 package com.prueba.api.franquicia.Models;
 
+
 public class Product {
+
     private int productId;
     private String name;
     private double stockAmount;
 
+    //Builder method
     public Product(String name, double stockAmount, int productId){
         this.productId = productId;
         this.name = name;
         this.stockAmount = stockAmount;
     }
 
+    //Getters and seters
     public int getProductId(){
         return productId;
-    } 
+    }
 
     public String getName(){
         return name;
