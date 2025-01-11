@@ -13,11 +13,11 @@ public class ProductController {
         @Autowired
         private ProductService productService;
 
-        @PostMapping
+        @PostMapping("/addNewProduct")
         public Product addProduct(@RequestBody Product product){
             return productService.createProduct(product);
         }
 
-    
-    
+
+
 }

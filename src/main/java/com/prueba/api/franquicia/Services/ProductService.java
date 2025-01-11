@@ -2,6 +2,8 @@ package com.prueba.api.franquicia.Services;
 
 import com.prueba.api.franquicia.Models.Product;
 import com.prueba.api.franquicia.Repository.ProductRepository;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,14 @@ public class ProductService {
 
     public Product createProduct(Product product){
         return productRepository.save(product);
+    }
+
+    public List<Product> getAllProducts(){
+        return productRepository.findAll();
+    }
+
+    public void deleteProduct(int productIdId){
+        productRepository.deleteById(productIdId);
     }
 
 }

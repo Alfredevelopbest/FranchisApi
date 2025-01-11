@@ -1,26 +1,38 @@
 package com.prueba.api.franquicia.Models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 
+
 @Entity
+@Table(name ="product")
 
 public class Product {
 
-    @Id
+    
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
+    @Id
+    @Column(name = "product_id")
     private int productId;
-    private String name;
+    @Column(name="name_product")
+    private String nameProduct;
+    @Column(name = "stock_amount")
     private double stockAmount;
 
     //Builder method
-    public Product(String name, double stockAmount, int productId){
+    public Product(String nameProduct, double stockAmount, int productId){
         this.productId = productId;
-        this.name = name;
+        this.nameProduct = nameProduct;
         this.stockAmount = stockAmount;
+    }
+
+    public Product(){
+        
     }
 
     //Getters and seters
@@ -28,12 +40,12 @@ public class Product {
         return productId;
     }
 
-    public String getName(){
-        return name;
+    public String getNameProduct(){
+        return nameProduct;
     }
 
-    public void setName(String name){
-        this.name = name;
+    public void setNameProduct(String nameProduct){
+        this.nameProduct = nameProduct;
     }
 
     public double getStockAmount(){
