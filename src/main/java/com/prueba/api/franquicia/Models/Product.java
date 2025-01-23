@@ -36,6 +36,11 @@ public class Product {
     }
 
     //Getters and seters
+
+    public void setProductId(int productId){
+        this.productId = productId;
+    }
+
     public int getProductId(){
         return productId;
     }
@@ -54,6 +59,16 @@ public class Product {
 
     public void setStockAmount(double stockAmount){
         this.stockAmount = stockAmount;
+    }
+
+
+
+    @Override
+    public String toString(){
+        return  "Product: {" +
+                " product id: " + productId + 
+                "name product: " + nameProduct +
+                "stock amount: " + stockAmount + "}";
     }
 
 

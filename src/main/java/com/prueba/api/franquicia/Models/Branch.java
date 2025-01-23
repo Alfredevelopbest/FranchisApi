@@ -2,10 +2,10 @@ package com.prueba.api.franquicia.Models;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "branch")
@@ -13,20 +13,20 @@ import jakarta.persistence.GenerationType;
 public class Branch {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    
     @Id
     @Column(name = "id_branch")
     private int idBranch;
     @Column(name = "name_branch")
     private String nameBranch;
-    @Column(name ="id_product", nullable = true)
-    private int idProduct;
+    
 
-    public Branch(int idBranch, String nameBranch, int idProduct){
+    //Builder method
+    public Branch(int idBranch, String nameBranch){
         this.idBranch = idBranch;
         this.nameBranch = nameBranch;
-        this.idProduct = idProduct;
     }
+
+    //Getters & setters
  
     public Branch(){
         
@@ -48,12 +48,13 @@ public class Branch {
         this.nameBranch = nameBranch;
     }
 
-    public int getIdProduct(){
-        return idProduct;
-    }
 
-    public void setIdProduct(int idProduct){
-        this.idProduct = idProduct;
-    }
+    @Override
+    public String toString() {
+    return "Branch{" +
+            "idBranch=" + idBranch +
+            ", nameBranch='" + nameBranch +  "}";
+}
+
 
 }

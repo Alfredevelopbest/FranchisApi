@@ -22,8 +22,15 @@ public class ProductService {
         return productRepository.findAll();
     }
 
-    public void deleteProduct(int productIdId){
-        productRepository.deleteById(productIdId);
+    public void deleteProduct(int productId){
+        if(productRepository.existsById(productId)){
+            productRepository.deleteById(productId);
+        }
+        else{
+            {throw new IllegalArgumentException("ID number " + productId + " does not exist.");}
+        }
     }
+
+    
 
 }

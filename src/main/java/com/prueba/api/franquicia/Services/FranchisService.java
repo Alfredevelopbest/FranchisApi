@@ -14,7 +14,13 @@ public class FranchisService {
     private FranchisRepository franchisRepository;
 
     public Franchis createFranchis(Franchis franchis){
+        if(franchisRepository.existsById(franchis.getfranchisId())){
+            throw new IllegalArgumentException("Id: " + franchis.getfranchisId() + " already exist.");
+        }
         return franchisRepository.save(franchis);
     }
+
+   
+    
     
 }
