@@ -4,9 +4,8 @@ package com.prueba.api.franquicia.Services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.prueba.api.franquicia.Models.Branch;
+import com.prueba.api.franquicia.DTO.ProductToBranchDTO;
 import com.prueba.api.franquicia.Models.Inventory;
-import com.prueba.api.franquicia.Models.Product;
 import com.prueba.api.franquicia.Repository.InventoryRepository;
 
 @Service
@@ -14,14 +13,20 @@ public class InventoryServices {
 @Autowired
 InventoryRepository inventoryRepository;
 Inventory inventory;
-Branch branch;
-Product product;
-    public Inventory addBranchToFranchis(Inventory inventory){
+
+    public Inventory postMethod(Inventory inventory){
         return inventoryRepository.save(inventory);
     }
 
-    public Inventory addProductToBranch(Inventory inventory ){
+    public Inventory updateMethod(ProductToBranchDTO productToBranchDTO){
+        Inventory inventory = new Inventory();
+        inventory.setBranchId(productToBranchDTO.getIdBranch());
+        inventory.setIdProduct(productToBranchDTO.getProductId());
+        if(inventory.getIdProduct() != null){
+            inventory.setIdProduct(null);
+        }
         return inventoryRepository.save(inventory);
     }
 }
+
 

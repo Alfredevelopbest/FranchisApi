@@ -25,7 +25,7 @@ public class Inventory {
 
     //Builder method
 
-    public Inventory(int idInventory, Integer idProduct, int branchId, int idFranchis){
+    public Inventory(int idInventory, Integer idProduct, int branchId, Integer idFranchis){
         this.idInventory = idInventory;
         this.idProduct = idProduct;
         this.branchId = branchId;
@@ -63,11 +63,11 @@ public class Inventory {
         return branchId;
     }
 
-    public void setIdFranchis(int idFranchis){
+    public void setIdFranchis(Integer idFranchis){
         this.idFranchis = idFranchis;
     }
 
-    public int getIdFranchis(){
+    public Integer getIdFranchis(){
         return idFranchis;
     }
 
