@@ -18,12 +18,15 @@ public class Branch {
     private int idBranch;
     @Column(name = "name_branch")
     private String nameBranch;
+    @Column(name = "id_franchis")
+    private int idFranchis;
     
 
     //Builder method
-    public Branch(int idBranch, String nameBranch){
+    public Branch(int idBranch, String nameBranch, int idFranchis){
         this.idBranch = idBranch;
         this.nameBranch = nameBranch;
+        this.idFranchis = idFranchis;
     }
 
     //Getters & setters
@@ -48,12 +51,21 @@ public class Branch {
         this.nameBranch = nameBranch;
     }
 
+    public void setIdFranchis(int idFranchis){
+        this.idFranchis = idFranchis;
+    }
+
+    public int getIdFranchis(){
+        return idFranchis;
+    }
+
 
     @Override
     public String toString() {
     return "Branch{" +
             "idBranch=" + idBranch +
-            ", nameBranch='" + nameBranch +  "}";
+            ", nameBranch='" + nameBranch + 
+            "idFranchis=" + idFranchis + "}";
 }
 
 

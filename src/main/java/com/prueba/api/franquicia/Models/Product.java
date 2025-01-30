@@ -23,12 +23,15 @@ public class Product {
     private String nameProduct;
     @Column(name = "stock_amount")
     private double stockAmount;
+    @Column(name = "branch_id")
+    private Integer branchId;
 
     //Builder method
-    public Product(String nameProduct, double stockAmount, int productId){
+    public Product(String nameProduct, double stockAmount, int productId, Integer branchiId){
         this.productId = productId;
         this.nameProduct = nameProduct;
         this.stockAmount = stockAmount;
+        this.branchId = branchiId;
     }
 
     public Product(){
@@ -61,6 +64,14 @@ public class Product {
         this.stockAmount = stockAmount;
     }
 
+    public Integer getBranchId(){
+        return branchId;
+    }
+
+    public void setBranchId(Integer branchId){
+        this.branchId = branchId;
+    }
+
 
 
     @Override
@@ -68,7 +79,8 @@ public class Product {
         return  "Product: {" +
                 " product id: " + productId + 
                 "name product: " + nameProduct +
-                "stock amount: " + stockAmount + "}";
+                "stock amount: " + stockAmount + 
+                "branch id:" + branchId + "}";
     }
 
 

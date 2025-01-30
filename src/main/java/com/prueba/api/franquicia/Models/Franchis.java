@@ -39,7 +39,7 @@ public class Franchis {
         this.franchisId = franchisId;
     }
 
-    public int getfranchisId(){
+    public int getFranchisId(){
         return franchisId;
     }
 

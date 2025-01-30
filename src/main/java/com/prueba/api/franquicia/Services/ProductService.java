@@ -19,6 +19,9 @@ public class ProductService {
     }
 
     public List<Product> getAllProducts(){
+        if (productRepository.findAll().isEmpty()){
+            {throw new IllegalArgumentException("There is not elements on list");}
+        }
         return productRepository.findAll();
     }
 
